@@ -28,6 +28,7 @@ public class HeaderInterceptor extends HandlerInterceptorAdapter {
 
         if (debug != null && debug.equals("true")) {
             MDC.put(DEBUG, "true");
+            LOGGER.debug("Debug header found");
         }
 
         return true;

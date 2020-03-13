@@ -20,6 +20,7 @@
 		<nimbus-jose-jwt.version>8.9</nimbus-jose-jwt.version>
 		<junit.version>4.12</junit.version>
 		<springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+		<jmh-version>1.23</jmh-version>
 	</properties>
 
 	<dependencies>
@@ -41,12 +42,9 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<!-- Hystrix dependency 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix</artifactId>
-			<version>1.4.7.RELEASE</version>
-		</dependency> -->
+		<!-- Hystrix dependency <dependency> <groupId>org.springframework.cloud</groupId> 
+			<artifactId>spring-cloud-starter-hystrix</artifactId> <version>1.4.7.RELEASE</version> 
+			</dependency> -->
 
 		<!-- Spring cache configuration -->
 		<dependency>

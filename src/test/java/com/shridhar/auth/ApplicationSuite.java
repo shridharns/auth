@@ -6,7 +6,9 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
        TokenServiceTest.class,
-       UserServiceTest.class
+       UserServiceTest.class,
+       UserRepositoryTest.class,
+       LoginServiceTest.class
 })
 public class ApplicationSuite {
 }
