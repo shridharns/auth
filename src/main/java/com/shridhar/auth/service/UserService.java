@@ -41,7 +41,7 @@ public class UserService {
 
 	@Cacheable("users")
 	//@HystrixCommand(fallbackMethod = "defaultUsers")
-	public List<User> getAllPersons() {
+	public List<User> getAllUsers() {
 
 		List<User> users = new ArrayList<>();
 
@@ -84,7 +84,7 @@ public class UserService {
 		return userFromDb;
 	}
 
-	@CacheEvict(value = "users", key = "#id")
+	@CacheEvict(value = "users", allEntries = true)
 	public void delete(int id) {
 		userRepository.deleteById(id);
 	}
