@@ -11,7 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.shridhar.auth.model.LoginResponse;
 import com.shridhar.auth.model.LoginUser;
+import com.shridhar.auth.model.User;
 import com.shridhar.auth.service.LoginService;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 public class LoginController {
@@ -25,6 +30,11 @@ public class LoginController {
         LOGGER.debug("Login controller initialized");
     }
 
+    @ApiOperation(value = "Login method for users, with email and password", response = LoginResponse.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Login response, including token, scope, expiresIn"),
+            @ApiResponse(code = 500, message = "Internal error while processing the request")
+    })
     @RequestMapping(path = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public LoginResponse login(@RequestBody LoginUser loginUser) throws IllegalAccessException {
     
